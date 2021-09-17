@@ -20,9 +20,8 @@ public class InsertSort {
     }
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
 
-        int[] x = {22, 5, 11, 32, 120, 68, 70};
+        int[] x = {0, 22, 5, 11, 32, 120, 68, 70};
 
         System.out.println("선택 정렬(버전1)");
         System.out.println("요솟수 : " + x.length);
