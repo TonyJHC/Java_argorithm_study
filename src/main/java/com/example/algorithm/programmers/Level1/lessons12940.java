@@ -1,4 +1,4 @@
-package com.example.algorithm.programmers;
+package com.example.algorithm.programmers.Level1;
 
 
 public class lessons12940 {

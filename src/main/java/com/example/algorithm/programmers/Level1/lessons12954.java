@@ -1,4 +1,4 @@
-package com.example.algorithm.programmers;
+package com.example.algorithm.programmers.Level1;
 
 
 import org.apache.ibatis.annotations.Delete;
