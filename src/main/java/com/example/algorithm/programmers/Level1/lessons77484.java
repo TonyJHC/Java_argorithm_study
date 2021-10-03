@@ -72,6 +72,8 @@ public class lessons77484 {
 
 /*
 참고 : 자바 공홈 https://dev.java/learn/tutorial/mastering-the-api/stream-api/creating-streams.html
+   Arrays stream https://jeffrey-oh.tistory.com/160
+   
 <스트림>
 : '데이터의 흐름'
 장점 : 배열 또는 인스턴스에 함수 여러 개를 조합하여 원하는 결과를 필터링하고 가공된 결과를 얻을 수 있음.
@@ -85,4 +87,5 @@ public class lessons77484 {
         )
                 .mapToInt(op -> (int) (op > 6 ? op - 1 : op))
                 .toArray();
-    }*/
+    }
+    */
