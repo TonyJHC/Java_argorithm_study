@@ -46,14 +46,17 @@ public class lessons72410 {
         if (resultSwap1[0] == '.') {
             answer = String.valueOf(resultSwap1, 1, 15);
             resultSwap1 = answer.toCharArray();
-            if (resultSwap1[14] == '.') { // 마지막에 . 있는지 확인
-                answer = String.valueOf(resultSwap1, 0, 14);
+            if (resultSwap1[resultSwap1.length-1] == '.') { // 마지막에 . 있는지 확인
+                answer = String.valueOf(resultSwap1, 0, resultSwap1.length); // 다시 String으로 변환
+
             }
         } else {
-            if (resultSwap1[15] == '.') { // 마지막에 . 있는지 확인
-                answer = String.valueOf(resultSwap1, 0, 14);
+            if (resultSwap1[resultSwap1.length-1] == '.') { // 마지막에 . 있는지 확인
+                answer = String.valueOf(resultSwap1, 0, resultSwap1.length-1);
+
             } else
-                answer = String.valueOf(resultSwap1, 0, 15); // 다시 String으로 변환
+                answer = String.valueOf(resultSwap1, 0, resultSwap1.length); // 다시 String으로 변환
+
         }
 
 
@@ -69,10 +72,11 @@ public class lessons72410 {
 
     public static void main(String[] args) {
         lessons72410 lessons72410 = new lessons72410();
-        System.out.println("before : ...!@BaT#*..y.abcdefghijklm");
+        System.out.println("z-+.^.");
 
-        String result = lessons72410.solution("...!@BaT#*..y.abcdefghijklm");
+     String result = lessons72410.solution("z-+.^.");
 
+       // String result = lessons72410.solution("123_.def");
 //        String str1 = "123123asdf";
 //        char[] str2 = str1.toCharArray();
 
