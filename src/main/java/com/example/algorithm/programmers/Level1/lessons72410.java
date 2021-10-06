@@ -1,11 +1,21 @@
 package com.example.algorithm.programmers.Level1;
 
-import javax.xml.stream.events.Characters;
-import java.util.Locale;
+
+import java.util.Arrays;
+
 
 public class lessons72410 {
     public String solution(String new_id) {
         String answer = "";
+
+        // 5단계
+        if (new_id.length() == 0)
+            new_id = "a";
+        else if (new_id.length() <= 2) { // new_id의 길이가 2이하라면
+            while (new_id.length() <= 3)   // 길이가 3이 될때까지
+                new_id += new_id.substring(new_id.length()); // 마지막 문자를 반복해서 끝에 붙임.
+        }
+
         // 1단계
         String lower = new_id.toLowerCase(); // 내장 함수 사용
         char[] resultSwap1 = lower.toCharArray();
@@ -21,27 +31,39 @@ public class lessons72410 {
 
         // 3단계
         k = 0;
-        for(int i = 0; i<resultSwap2.length; i++) {
-            if (resultSwap2[i] == '.' && resultSwap2[i + 1] == '.') { // 2번 곂칠때
-                resultSwap1[k++] = resultSwap2[i++];
-                if (resultSwap2[i] == '.' && resultSwap2[i + 1] == '.') // 3번 곂칠때
-                    resultSwap1[k++] = resultSwap2[i++];
+        for (int i = 0; i < resultSwap2.length; i++) {
+            while (true) {
+                if (resultSwap2[i] == '.' && resultSwap2[i + 1] == '.')
+                    i++;
+                else {
+                    resultSwap1[k++] = resultSwap2[i];
+                    break;
+                }
             }
-            else
-                resultSwap1[k++] = resultSwap2[i];
         }
 
-//        int i = 0;
-//        while (i < resultSwap2.length) {
-//            if (resultSwap2[i] == '.' && resultSwap2[i + 1] == '.')
-//                resultSwap1[k++] = resultSwap2[i++];
-//            else
-//                resultSwap1[k++] = resultSwap2[i];
-//            i++;
+        // 4단계 : 맨 처음 "." 제거
+        if (resultSwap1[0] == '.') {
+            answer = String.valueOf(resultSwap1, 1, 15);
+            resultSwap1 = answer.toCharArray();
+            if (resultSwap1[14] == '.') { // 마지막에 . 있는지 확인
+                answer = String.valueOf(resultSwap1, 0, 14);
+            }
+        } else {
+            if (resultSwap1[15] == '.') { // 마지막에 . 있는지 확인
+                answer = String.valueOf(resultSwap1, 0, 14);
+            } else
+                answer = String.valueOf(resultSwap1, 0, 15); // 다시 String으로 변환
+        }
+
+
+//        if (resultSwap1[15] == '.') { // 마지막에 . 있는지 확인
+//            answer = String.valueOf(resultSwap1, 0, 14);
+//        } else {
+//            answer = String.valueOf(resultSwap1, 0, 15); // 다시 String으로 변환
 //        }
 
 
-        answer = String.valueOf(resultSwap1); // 다시 String으로 변환
         return answer;
     }
 
@@ -60,7 +82,7 @@ public class lessons72410 {
 //            }
 //        }
 
-        System.out.println("result : " + result);
+        System.out.println("after : " + result);
 
     }
 }
