@@ -7,7 +7,17 @@ import java.util.Arrays;
 public class lessons72410 {
     public String solution(String new_id) {
         String answer = "";
+        new_id = new_id.toLowerCase();
 
+        String newId = "";
+
+        for (int i = 0; i < new_id.length(); i++) {
+            char tmp = new_id.charAt(i);
+            if (tmp == '')
+        }
+
+
+/*
         // 5단계
         if (new_id.length() == 0)
             new_id = "a";
@@ -66,17 +76,17 @@ public class lessons72410 {
 //            answer = String.valueOf(resultSwap1, 0, 15); // 다시 String으로 변환
 //        }
 
-
+*/
         return answer;
     }
 
     public static void main(String[] args) {
         lessons72410 lessons72410 = new lessons72410();
-        System.out.println("z-+.^.");
+        System.out.println("...!@BaT#*..y.abcdefghijklm");
 
-     String result = lessons72410.solution("z-+.^.");
+        String result = lessons72410.solution("z-+.^.");
 
-       // String result = lessons72410.solution("123_.def");
+        // String result = lessons72410.solution("123_.def");
 //        String str1 = "123123asdf";
 //        char[] str2 = str1.toCharArray();
 
