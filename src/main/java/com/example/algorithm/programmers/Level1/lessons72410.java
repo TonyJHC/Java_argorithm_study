@@ -8,8 +8,11 @@ public class lessons72410 {
     public String solution(String new_id) {
         String answer = "";
 
+
         // 1단계
         new_id = new_id.toLowerCase();
+
+        System.out.println(new_id);
 
         String newId2 = "";
 
@@ -25,87 +28,52 @@ public class lessons72410 {
             else if (tmp == '.')
                 newId2 += tmp;
         }
+        System.out.println(newId2);
 
         String newId3 = "";
         // 3단계 :  마침표(.)가 2번 이상 연속된 부분을 하나의 마침표(.)로 치환
-        for (int i = 0; i < newId2.length()-1; i++) {
+        for (int i = 0; i < newId2.length() - 1; i++) {
 //            char tmp1 = newId2.charAt(i);
 //            char tmp2 = newId2.charAt(i+1);
 
             if (newId2.charAt(i) != '.' || newId2.charAt(i + 1) != '.')
                 newId3 += newId2.charAt(i);
         }
+        System.out.println(newId3);
 
 //        String newId4 = "";
         // 4단계 : 4단계 new_id에서 마침표(.)가 처음이나 끝에 위치한다면 제거합니다.
-        if(newId3.charAt(0) == '.')
+        if (newId3.charAt(0) == '.')
             newId3 = newId3.substring(1);
-        else if(newId3.charAt(newId3.length()) == '.')
-            newId3 = newId3.substring(0,newId3.length()-1);
+        else if (newId3.charAt(newId3.length() - 1) == '.')
+            newId3 = newId3.substring(0, newId3.length() - 1);
 
-        answer =newId3;
+        System.out.println("4단계 이후 : " + newId3);
 
+//        answer =newId3;
 
-/*
-        // 5단계
-        if (new_id.length() == 0)
-            new_id = "a";
-        else if (new_id.length() <= 2) { // new_id의 길이가 2이하라면
-            while (new_id.length() <= 3)   // 길이가 3이 될때까지
-                new_id += new_id.substring(new_id.length()); // 마지막 문자를 반복해서 끝에 붙임.
+        // 5단계 : new_id가 빈 문자열이라면, new_id에 "a"를 대입합니다.
+        if (newId3.length() == 0) {
+            newId3 = "a";
+        } else if (newId3.length() >= 16) { // 6단계 : new_id의 길이가 16자 이상이면, new_id의 첫 15개의 문자를 제외한 나머지 문자들을 모두 제거합니다.
+            newId3 = newId3.substring(0, 15);
+            if (newId3.charAt(14) == '.')//     만약 제거 후 마침표(.)가 new_id의 끝에 위치한다면 끝에 위치한 마침표(.) 문자를 제거합니다.
+                newId3 = newId3.substring(0, newId3.length() - 1);
         }
 
-        // 1단계
-        String lower = new_id.toLowerCase(); // 내장 함수 사용
-        char[] resultSwap1 = lower.toCharArray();
-        char[] resultSwap2 = resultSwap1; // 옮길 배열
+        System.out.println("5, 6 단계 이후 : " + newId3);
 
-        // 2단계
-        int k = 0;
-        for (int i = 0; i < resultSwap1.length; i++) {
-            if ((resultSwap1[i] >= 'a' && resultSwap1[i] <= 'z') || (resultSwap1[i] >= '0' && resultSwap1[i] <= '9') || (resultSwap1[i] == '-') || (resultSwap1[i] == '_') || (resultSwap1[i] == '.')) {
-                resultSwap2[k++] = resultSwap1[i];
-            }
+        // 7단계
+        if (newId3.length() <= 2) {
+            char a = newId3.charAt(newId3.length() - 1);
+            while (newId3.length() <= 3)
+                newId3 += a;
         }
 
-        // 3단계
-        k = 0;
-        for (int i = 0; i < resultSwap2.length; i++) {
-            while (true) {
-                if (resultSwap2[i] == '.' && resultSwap2[i + 1] == '.')
-                    i++;
-                else {
-                    resultSwap1[k++] = resultSwap2[i];
-                    break;
-                }
-            }
-        }
+        System.out.println(newId3);
 
-        // 4단계 : 맨 처음 "." 제거
-        if (resultSwap1[0] == '.') {
-            answer = String.valueOf(resultSwap1, 1, 15);
-            resultSwap1 = answer.toCharArray();
-            if (resultSwap1[resultSwap1.length-1] == '.') { // 마지막에 . 있는지 확인
-                answer = String.valueOf(resultSwap1, 0, resultSwap1.length); // 다시 String으로 변환
+        answer = newId3;
 
-            }
-        } else {
-            if (resultSwap1[resultSwap1.length-1] == '.') { // 마지막에 . 있는지 확인
-                answer = String.valueOf(resultSwap1, 0, resultSwap1.length-1);
-
-            } else
-                answer = String.valueOf(resultSwap1, 0, resultSwap1.length); // 다시 String으로 변환
-
-        }
-
-
-//        if (resultSwap1[15] == '.') { // 마지막에 . 있는지 확인
-//            answer = String.valueOf(resultSwap1, 0, 14);
-//        } else {
-//            answer = String.valueOf(resultSwap1, 0, 15); // 다시 String으로 변환
-//        }
-
-*/
         return answer;
     }
 
@@ -113,18 +81,7 @@ public class lessons72410 {
         lessons72410 lessons72410 = new lessons72410();
         System.out.println("...!@BaT#*..y.abcdefghijklm");
 
-        String result = lessons72410.solution("...!@BaT#*..y.abcdefghijklm");
-
-        // String result = lessons72410.solution("123_.def");
-//        String str1 = "123123asdf";
-//        char[] str2 = str1.toCharArray();
-
-//        for(int i=0; i<str2.length;i ++){
-//            if(str2[i] >= '0' && str2[i] <= '9'){
-//                System.out.println("this is 숫자 : "+str2[i]);
-//            }
-//        }
-
+        String result = lessons72410.solution("z-+.^.");
         System.out.println("after : " + result);
 
     }
