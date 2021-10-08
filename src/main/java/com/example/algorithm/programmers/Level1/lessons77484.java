@@ -34,6 +34,7 @@ public class lessons77484 {
                     correctCnt++;
             }
         }
+
         if (correctCnt == 0) { // 맞춘 것이 없다면
             answer[0] = 6;
             answer[1] = 6;
@@ -43,7 +44,6 @@ public class lessons77484 {
             answer[1] = 1;
             return answer;
         }
-
 
         //int high = correctCnt + zeroCnt;
         //int low = correctCnt;
