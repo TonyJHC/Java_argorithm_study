@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 public class lessons60057 {
     public int solution(String s) {
-        int answer = 0;
+        int answer = 1000;
 //        s.substring(k,k+i+i);
         String[] str = new String[s.length() / 2 + 1]; // 자르는 단위만큼 String 객체 수가 정해질테니까.
         int[] lengths = new int[str.length ];
@@ -66,7 +66,7 @@ public class lessons60057 {
     public static void main(String[] args) {
         lessons60057 lessons60057 = new lessons60057();
 
-        int answer = lessons60057.solution("abcabcdede");
+        int answer = lessons60057.solution("xababcdcdababcdcd");
         System.out.println("answer is " + answer);
     }
 
