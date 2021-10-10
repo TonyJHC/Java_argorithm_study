@@ -6,7 +6,8 @@ public class test {
         String str1 = "abcabcabcabcdededededede";
         System.out.println(str1.length());
         System.out.println(str1.substring(0,3));
-        System.out.println(str1.substring(3,6));
+        System.out.println(str1);
+        System.out.println(str1.substring(0,str1.length()));
 
     }
 }
