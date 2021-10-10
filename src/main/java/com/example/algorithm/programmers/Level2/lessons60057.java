@@ -10,9 +10,10 @@ public class lessons60057 {
         int answer = 0;
 //        s.substring(k,k+i+i);
         String[] str = new String[s.length() / 2 + 1]; // 자르는 단위만큼 String 객체 수가 정해질테니까.
-
+        int cnt = 0;
         for (int i = 1; i <= s.length() / 2; i++) { // 자르는 단위
             str[i] = "";
+            cnt = 0; // 개수 초기화
             for (int k = 0; k <= s.length() / i && k + i + i < s.length(); k += i) { // 인덱스 에러 안나도록 s.length()-2*i
 //                if (s.substring(k, k + i).equals(s.substring(k + i, k + i + i))) { // 단위로 자른 요소들 비교 (옆에 있는 것 끼리)
                 if (s.substring(k, k + i).equals(s.substring(k + i, k + i + i))) { // 단위로 자른 요소들 비교 (옆에 있는 것 끼리)
