@@ -31,8 +31,8 @@ public class lessons81302_2 {
         }
 
         for (int p = 0; p < 5; p++) { // 대기실
-            for (int c = 0; c < 5; c++) { //  행
-                for (int r = 0; r < 5; r++) {
+            for (int r = 0; r < 5; r++) { //  행
+                for (int c = 0; c < 5; c++) {
                     char cpr = strc[p][r][c];
                     // 1. 같은 행에서 거리 검사
                     for (int i = r + 1; i < 5; i++) {
