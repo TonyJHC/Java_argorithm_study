@@ -31,8 +31,8 @@ public class lessons81302_2 {
         }
 
         for (int p = 0; p < 5; p++) { // 대기실
-            for (int r = 0; r < 5; r++) { //  행
-                for (int c = 0; c < 5; c++) {
+            for (int c = 0; c < 5; c++) { //  행
+                for (int r = 0; r < 5; r++) {
                     char cpr = strc[p][r][c];
                     // 1. 같은 행에서 거리 검사
                     for (int i = r + 1; i < 5; i++) {
@@ -47,12 +47,11 @@ public class lessons81302_2 {
                                 if ((r + 1) < 5 && strc[p][r][r + 1] != 'X') { // 사이에 파티션이 없다면 ** 주의 : 오버플로우 , 에러안나면 무시
                                     System.out.println(p + ", " + r + ", " + c +"거리 2 : 같은 column에 위치한 좌석 " + strc[p][r][c] + " , " + strc[p][r][c + 1]);
                                     answer[p] = 0; // 해당 대기실 방역수칙 어김 : 0
-
                                 }
                             }
                         }
-
                     }
+
                     // 2. 같은 열에서 거리 검사
                     for (int i = c + 1; i < 5; i++) {
                         if (Math.abs(c - i) + Math.abs(r - r) == 1) {// 거리가 1일때
@@ -78,7 +77,6 @@ public class lessons81302_2 {
 //                                if (strc[p][r + 1][c] != 'X' && strc[p][r][c + 1] != 'X') {
                                 System.out.println(p + ", " + r + ", " + c + " 거리 2 : 같은 column에 위치한 좌석 " + strc[p][r][c] + " , " + strc[p][r + i][c + i]);
                                 answer[p] = 0; // 해당 대기실 방역수칙 어김 : 0
-
 //                                }
                             }
                         }
@@ -96,7 +94,8 @@ public class lessons81302_2 {
         String[][] places = {{"POOOP", "OXXOX", "OPXPX", "OOXOX", "POXXP"},
                 {"POOPX", "OXPXP", "PXXXO", "OXXXO", "OOOPP"},
                 {"PXOPX", "OXOXP", "OXPOX", "OXXOP", "PXPOX"},
-                {"OOOXX", "XOOOX", "OOOXX", "OXOOX", "OOOOO"}, {"PXPXP", "XPXPX", "PXPXP", "XPXPX", "PXPXP"}};
+                {"OOOXX", "XOOOX", "OOOXX", "OXOOX", "OOOOO"},
+                {"PXPXP", "XPXPX", "PXPXP", "XPXPX", "PXPXP"}};
 
         int[] answer = lessons81302_2.solution(places);
 
