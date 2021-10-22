@@ -66,12 +66,9 @@ public class lessons81302_2 {
                             if ((strc[p][r][c] == 'P' && strc[p][i][c] == 'P')) {
                                 if ((r + 1) < 5 && strc[p][r + 1][c] != 'X') // 사이에 파티션이 없다면 ** 주의 : 오버플로우 , 에러안나면 무시
                                     System.out.println(p + ", " + r + ", " + c +"거리 2 : 같은 column에 위치한 좌석 " + strc[p][r][c] + " , " + strc[p][i][c]);
-
                                 answer[p] = 0; // 해당 대기실 방역수칙 어김 : 0
-
                             }
                         }
-
                     }
 
                     // 3. 대각선 조사
@@ -86,19 +83,9 @@ public class lessons81302_2 {
                             }
                         }
                     }
-
-
                 }
-
             }
-
-
-
-
-
         }
-
-
         return answer;
 
     }
