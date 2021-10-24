@@ -29,7 +29,7 @@ public class lessons81302_2 {
 
             System.out.println();
         }
-
+//
         for (int p = 0; p < 5; p++) { // 대기실
             for (int c = 0; c < 5; c++) { //  행
                 for (int r = 0; r < 5; r++) {
