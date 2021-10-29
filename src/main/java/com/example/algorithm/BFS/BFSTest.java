@@ -10,8 +10,9 @@ public class BFSTest {
     // 방문순서는 상우하좌의 순서로 방문하도록 세팅되었습니다.
     private static int[] addRow = { -1, 0, 1, 0 };
     private static int[] addCol = { 0, 1, 0, -1 };
+
     private static int cnt;
- 
+
     public static void main(String[] args) {
         // BFS를 테스트할 2차원 배열을 생성합니다.
         // 배열을 최초 생성할 경우 배열 안의 값은 모두 0으로 초기화되어있습니다.
