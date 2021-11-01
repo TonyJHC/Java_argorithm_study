@@ -55,7 +55,7 @@ public class lessons1829 {
                         for (int k = 0; k < 4; k++) { // 상하좌우 비교하기
                             nextRow = row + moveRow[k]; // 상하 이동후 좌표
                             nextCol = col + moveCol[k]; // 좌우 이동후 좌표
-
+// 왜 안됨 ;;
                             // 상하좌우 이동후 좌표 검사 : 인덱스 넘어가거나 이미 방문한 노드라면
                             if (nextRow >= m || nextCol >= n || nextCol <= 0 || nextRow <= 0 || visited[nextCol][nextCol] == true)
                                 continue; // 더이상 탐색 x
@@ -69,8 +69,6 @@ public class lessons1829 {
 
                                 } else // 없다면
                                     areaMap.put(picture[row][col], 1); // 영역(색) 추가
-
-
                             }
 
 
