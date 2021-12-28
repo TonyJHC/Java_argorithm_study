@@ -1,7 +1,6 @@
 package com.example.algorithm.programmers.Level1;
 
 
-import org.apache.ibatis.annotations.Delete;
 
 import java.util.ArrayList;
 import java.util.List;

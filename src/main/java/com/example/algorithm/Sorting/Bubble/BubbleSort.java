@@ -1,7 +1,5 @@
 package com.example.algorithm.Sorting.Bubble;
 
-import com.example.algorithm.AlgorithmApplication;
-import org.springframework.boot.SpringApplication;
 
 import java.util.Scanner;
 
