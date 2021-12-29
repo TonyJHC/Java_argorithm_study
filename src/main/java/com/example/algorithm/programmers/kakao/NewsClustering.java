@@ -8,12 +8,12 @@ import java.util.Scanner;
 
 public class NewsClustering {
 
+    // 부분집합 만들기 함수
     public List<String> setCalculator(String str) {
         List<String> multiSet = new ArrayList<>();
         char[] charArray = str.toCharArray();
 
         for (int i = 0; i < charArray.length; i++) {
-
             String tmpstr = "";
             if (i + 1 == charArray.length)
                 break;
@@ -26,7 +26,9 @@ public class NewsClustering {
         }
         return multiSet;
     }
-    public void printSet(List<String> multiSet){
+
+    // 그냥 확인용 출력함수
+    public void printSet(List<String> multiSet) {
 
         System.out.println();
         System.out.println("------------------");
@@ -37,23 +39,46 @@ public class NewsClustering {
         System.out.println();
     }
 
-    public int Jaccard(List<String> multiSet1, List<String> multiSet2){
+    // 합집합 교집합 만들기 , 자카드 유사도 계산
+    public int Jaccard(List<String> multiSet1, List<String> multiSet2) {
 
-        int emptySet =0; // 공집합
-        int unionSet =0; // 합집합
+        if (multiSet1.size() == 0 && multiSet2.size() == 0) // 집합 A,B가 모두 공집합일 경우
+            return 1 * 65536;
+
+        // multiSet1의 요소 합집합 추가
         List<String> unionSetList = new ArrayList<>();
-        for(int i=0; i<multiSet1.size(); i++){
-            if(!unionSetList.contains(multiSet1.get(i))) // 중복이 없으면
-                unionSetList.add(multiSet1.get(i)); // 합집합에 추가
-            for(int k=0; k < multiSet2.size(); k ++){
-                if(multiSet1.get(i) )
+        for (String tmp : multiSet1) {
+            unionSetList.add(tmp);
+        }
+        int interCnt = 0; // 교집합
+        int unionCnt = unionSetList.size(); // 합집합
 
+
+        // 교집합 만들기
+        for (int i = 0; i < multiSet1.size(); i++) {
+            if (i == multiSet1.size())
+                break;
+            for (int k = 0; k < multiSet2.size(); k++) {
+                if (multiSet1.get(i).equals(multiSet2.get(k))) { // 교집합 조건
+                    interCnt++; // 교집합 카운트 ++
+                    multiSet2.remove(k); // 중복을 위해 비교 대상이 multiSet2 에서 제거하기
+                    break; // 인덱스 뛰어넘기
+                }
             }
-
-
         }
 
-        return 1;
+        // 합집합 만들기
+        for (String tmp : multiSet2) { // multiSet1 과 mutliSet2 의 교집합을 제외한 나머지 mutliSet2의 요소들 합집합에 추가
+            unionSetList.add(tmp);
+            unionCnt++;
+        }
+        // 자카드 유사도 계산
+        System.out.println("교집합 : " + interCnt);
+        System.out.println("합집합 : " + unionCnt);
+        System.out.println(unionSetList.size());
+        int result = (interCnt * 65536) / unionCnt;
+
+        return result;
     }
 
     public int solution(String str1, String str2) {
@@ -65,12 +90,14 @@ public class NewsClustering {
 
         System.out.println(str1);
         List<String> multiSet1 = setCalculator(str1);
+
+        System.out.println(str2);
         List<String> multiSet2 = setCalculator(str2);
 
         printSet(multiSet1);
         printSet(multiSet2);
 
-        answer = Jaccard(multiSet1,multiSet2);
+        answer = Jaccard(multiSet1, multiSet2);
 
 
         return answer;
@@ -80,8 +107,8 @@ public class NewsClustering {
 
         NewsClustering newsClustering = new NewsClustering();
 
-        newsClustering.solution("aa1+aa2", "AAAA12");
-
+        int result = newsClustering.solution("handshake", "shake hands");
+        System.out.println("자카도 계산 : " + result);
     }
 
 }
