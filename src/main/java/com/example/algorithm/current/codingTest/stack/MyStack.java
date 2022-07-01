@@ -1,4 +1,4 @@
-package com.example.algorithm;
+package com.example.algorithm.current.codingTest.stack;
 
 import java.util.ArrayList;
 

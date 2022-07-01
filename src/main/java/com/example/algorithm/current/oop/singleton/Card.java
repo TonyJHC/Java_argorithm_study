@@ -1,4 +1,5 @@
-package com.example.algorithm;
+package com.example.algorithm.current.oop.singleton;
+
 
 public class Card {
     private int cardNumber;

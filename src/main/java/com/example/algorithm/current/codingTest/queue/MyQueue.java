@@ -1,4 +1,5 @@
-package com.example.algorithm;
+package com.example.algorithm.current.codingTest.queue;
+
 
 import java.util.ArrayList;
 
