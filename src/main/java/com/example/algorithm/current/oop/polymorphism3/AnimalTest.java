@@ -1,11 +1,11 @@
-package com.example.algorithm.oop;
+package com.example.algorithm.current.oop.polymorphism3;
 
-
-import com.example.algorithm.programmers.Level1.test;
 
 import java.util.ArrayList;
 
 class Animal {
+
+    // protected는 상속받는 하위클래스에서만 접근 허용 , private과 final 선언된 함수는 비-가상함수이기 때문에 가상함수 테이블에 소속 x -> 오버라이딩이 불가함.
     public void move() {
         System.out.println("동물이 움직입니다.");
     }

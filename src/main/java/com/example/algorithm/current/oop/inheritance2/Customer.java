@@ -1,4 +1,4 @@
-package com.example.algorithm.current.oop.inheritance;
+package com.example.algorithm.current.oop.inheritance2;
 
 
 public class Customer {

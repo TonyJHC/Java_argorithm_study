@@ -1,4 +1,4 @@
-package com.example.algorithm.current.oop.singleton;
+package com.example.algorithm.current.oop.singleton1;
 
 
 
